@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6de8c5b6-fc73-49ba-9c62-d66688bc3b15" name="Changes" comment="added app">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/line_chart.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/line_chart.html" afterDir="false" />
-    </list>
+    <list default="true" id="6de8c5b6-fc73-49ba-9c62-d66688bc3b15" name="Changes" comment="Added all the html files." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,6 +45,7 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
@@ -102,7 +98,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1762898106254</updated>
-      <workItem from="1762898107363" duration="1072000" />
+      <workItem from="1762898107363" duration="1245000" />
     </task>
     <task id="LOCAL-00001" summary="Added all the files for the project.">
       <option name="closed" value="true" />
@@ -120,7 +116,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762899015035</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added all the html files.">
+      <option name="closed" value="true" />
+      <created>1762899254149</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1762899254149</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +133,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added all the files for the project." />
     <MESSAGE value="added app" />
-    <option name="LAST_COMMIT_MESSAGE" value="added app" />
+    <MESSAGE value="Added all the html files." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added all the html files." />
   </component>
 </project>

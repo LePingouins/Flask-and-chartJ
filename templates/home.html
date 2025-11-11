@@ -1,6 +1,28 @@
 {% extends "base.html" %}
+
 {% block title %}Home – IoT Dashboard{% endblock %}
+
 {% block content %}
-  <h2>Welcome</h2>
-  <p>Select a chart from the navigation bar.</p>
+  <h2>Welcome to the IoT Dashboard</h2>
+  <p>This Flask + Chart.js web app displays sample IoT sensor data in various chart formats.</p>
+
+  <section class="cards">
+    <div class="card">
+      <h3>Line Chart</h3>
+      <p>Visualize temperature data over time.</p>
+      <a class="btn" href="{{ url_for('line_chart') }}">View Line Chart</a>
+    </div>
+
+    <div class="card">
+      <h3>Bar Chart</h3>
+      <p>Compare multiple sensor readings side-by-side.</p>
+      <a class="btn" href="{{ url_for('bar_chart') }}">View Bar Chart</a>
+    </div>
+
+    <div class="card">
+      <h3>Pie Chart</h3>
+      <p>Observe the distribution of device status or sensor types.</p>
+      <a class="btn" href="{{ url_for('pie_chart') }}">View Pie Chart</a>
+    </div>
+  </section>
 {% endblock %}
