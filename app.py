@@ -1,5 +1,5 @@
 import sqlite3
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request  # ← added request
 
 app = Flask(__name__)
 
@@ -30,12 +30,12 @@ def pie_data():
         'labels': ['Online', 'Sleeping', 'Charging', 'Error'],
         'datasets': [{
             'label': 'Smart Devices',
-            'data': [20, 5, 8, 2],  # change counts here
+            'data': [20, 5, 8, 2],
             'backgroundColor': [
-                'rgba(54, 162, 235, 0.7)',   # Blue
-                'rgba(255, 206, 86, 0.7)',   # Yellow
-                'rgba(75, 192, 192, 0.7)',   # Teal
-                'rgba(255, 99, 132, 0.7)'    # Pink
+                'rgba(54, 162, 235, 0.7)',
+                'rgba(255, 206, 86, 0.7)',
+                'rgba(75, 192, 192, 0.7)',
+                'rgba(255, 99, 132, 0.7)'
             ],
             'borderColor': [
                 'rgba(54, 162, 235, 1)',
@@ -57,18 +57,44 @@ def test_db():
     conn.close()
     return jsonify([t[0] for t in tables])
 
+# ==== UPDATED: supports start/end filtering from the page controls ====
 @app.route('/api/line-data')
 def line_data():
-    # Connect to the IoT database
     conn = get_db_connection('iot_data.db')
 
-    # Query temperature readings ordered by timestamp
-    readings = conn.execute(
-        'SELECT timestamp, temperature FROM temperature_readings ORDER BY timestamp'
-    ).fetchall()
+    # read optional query params from ?start=...&end=...
+    start = request.args.get('start')
+    end   = request.args.get('end')
+
+    # datetime-local inputs come like "YYYY-MM-DDTHH:MM"
+    # convert to "YYYY-MM-DD HH:MM:SS" for SQLite comparisons
+    def fix(dt):
+        if not dt:
+            return None
+        dt = dt.replace('T', ' ')
+        return dt + (':00' if len(dt) == 16 else '')
+
+    sql = 'SELECT timestamp, temperature FROM temperature_readings'
+    params = []
+
+    s = fix(start)
+    e = fix(end)
+
+    if s and e:
+        sql += ' WHERE timestamp BETWEEN ? AND ?'
+        params = [s, e]
+    elif s:
+        sql += ' WHERE timestamp >= ?'
+        params = [s]
+    elif e:
+        sql += ' WHERE timestamp <= ?'
+        params = [e]
+
+    sql += ' ORDER BY timestamp'
+
+    readings = conn.execute(sql, params).fetchall()
     conn.close()
 
-    # Format data for Chart.js
     data = {
         'labels': [row['timestamp'] for row in readings],
         'datasets': [{
@@ -80,33 +106,8 @@ def line_data():
             'fill': True
         }]
     }
-
     return jsonify(data)
 
-
-# 👇 This part actually starts the Flask development server
+# start dev server
 if __name__ == '__main__':
     app.run(debug=True)
-
-# from flask import Flask, render_template
-#
-# app = Flask(__name__)
-#
-# @app.route('/')
-# def home():
-#  return render_template('home.html')
-#
-# @app.route('/line-chart')
-# def line_chart():
-#  return render_template('line_chart.html')
-#
-# @app.route('/bar-chart')
-# def bar_chart():
-#  return render_template('bar_chart.html')
-#
-# @app.route('/pie-chart')
-# def pie_chart():
-#  return render_template('pie_chart.html')
-#
-# if __name__ == '__main__':
-#  app.run(debug=True)

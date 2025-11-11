@@ -3,32 +3,93 @@
 {% block title %}Line Chart – IoT Dashboard{% endblock %}
 
 {% block content %}
-  <h2>Line Chart</h2>
-  <p>This chart will display temperature readings over time.</p>
+  <h2>Temperature Trends Over Time</h2>
+  <p>This chart displays temperature readings from IoT sensors (SQLite database).</p>
 
-  <div class="chart-container">
+  <!-- Controls -->
+  <form id="filters" class="controls" onsubmit="event.preventDefault(); fetchAndRender();">
+    <label>
+      From:
+      <input id="start" type="datetime-local">
+    </label>
+    <label>
+      To:
+      <input id="end" type="datetime-local">
+    </label>
+    <button type="submit">Apply</button>
+    <button type="button" id="refreshBtn">Refresh</button>
+  </form>
+
+  <div class="chart-container" style="max-width: 900px; margin: 14px auto;">
     <canvas id="lineChart"></canvas>
   </div>
 {% endblock %}
 
 {% block scripts %}
-  <script>
-    // Placeholder script (we'll add real data later)
-    const ctxLine = document.getElementById('lineChart').getContext('2d');
-    new Chart(ctxLine, {
+<script>
+  let lineChart;  // keep a reference so we can update it
+
+  function buildUrl() {
+    const start = document.getElementById('start').value;
+    const end   = document.getElementById('end').value;
+
+    const params = new URLSearchParams();
+    if (start) params.set('start', start);
+    if (end)   params.set('end', end);
+
+    return params.toString()
+      ? `/api/line-data?${params.toString()}`
+      : `/api/line-data`;
+  }
+
+  async function fetchAndRender() {
+    const res  = await fetch(buildUrl());
+    const data = await res.json();
+
+    const ctx = document.getElementById('lineChart').getContext('2d');
+
+    if (lineChart) {
+      // update existing chart
+      lineChart.data.labels = data.labels;
+      lineChart.data.datasets[0].data = data.datasets[0].data;
+      lineChart.update();
+      return;
+    }
+
+    // create chart first time
+    lineChart = new Chart(ctx, {
       type: 'line',
-      data: {
-        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-        datasets: [{
-          label: 'Temperature (°C)',
-          data: [22, 21, 23, 25, 24, 26, 28],
-          borderColor: '#38bdf8',
-          backgroundColor: 'rgba(56,189,248,0.2)',
-          tension: 0.3,
-          fill: true
-        }]
-      },
-      options: { responsive: true }
+      data,
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: true, position: 'top' },
+          title:  { display: true, text: 'Temperature Monitoring – 24 Hour Period' }
+        },
+        elements: { point: { radius: 2 } },
+        scales: {
+          x: { ticks: { maxRotation: 45, minRotation: 45 } },
+          y: { title: { display: true, text: '°C' } }
+        }
+      }
     });
-  </script>
+
+    // Make the canvas area taller for readability
+    document.getElementById('lineChart').parentElement.style.height = '380px';
+  }
+
+  // Wire up refresh button
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('refreshBtn').addEventListener('click', fetchAndRender);
+    fetchAndRender(); // initial load
+  });
+</script>
+
+<style>
+  /* tiny helper styles so controls look tidy */
+  .controls { display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin:10px 0; }
+  .controls label { display:flex; gap:6px; align-items:center; }
+  .controls button { padding:6px 12px; border-radius:6px; border:1px solid #1f2937; }
+</style>
 {% endblock %}
