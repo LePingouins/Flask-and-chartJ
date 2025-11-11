@@ -1,30 +1,41 @@
 {% extends "base.html" %}
 
-{% block title %}Pie Chart – IoT Dashboard{% endblock %}
+{% block title %}Pie Chart - IoT Dashboard{% endblock %}
 
 {% block content %}
-  <h2>Pie Chart</h2>
-  <p>This chart shows the proportion of device types or statuses.</p>
+  <h2>Device Status Distribution</h2>
+  <p>
+    This chart shows the distribution of device statuses across all IoT devices
+    (using static data).
+  </p>
 
   <div class="chart-container">
     <canvas id="pieChart"></canvas>
   </div>
-{% endblock %}
 
-{% block scripts %}
   <script>
-    const ctxPie = document.getElementById('pieChart').getContext('2d');
-    new Chart(ctxPie, {
-      type: 'pie',
-      data: {
-        labels: ['Active', 'Idle', 'Offline'],
-        datasets: [{
-          label: 'Device Status',
-          data: [60, 25, 15],
-          backgroundColor: ['#4ade80', '#fbbf24', '#f87171']
-        }]
-      },
-      options: { responsive: true }
-    });
+    // Fetch data from our Flask API endpoint and use it in Chart.js
+    fetch('/api/pie-data')
+      .then(response => response.json())
+      .then(data => {
+        const ctx = document.getElementById('pieChart').getContext('2d');
+        new Chart(ctx, {
+          type: 'pie',
+          data: data,
+          options: {
+            responsive: true,
+            plugins: {
+              legend: {
+                display: true,
+                position: 'top',
+              },
+              title: {
+                display: true,
+                text: 'IoT Device Status Overview'
+              }
+            }
+          }
+        });
+      });
   </script>
 {% endblock %}

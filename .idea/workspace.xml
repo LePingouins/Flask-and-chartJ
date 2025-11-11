@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6de8c5b6-fc73-49ba-9c62-d66688bc3b15" name="Changes" comment="Create Placeholder Templates for Charts.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="6de8c5b6-fc73-49ba-9c62-d66688bc3b15" name="Changes" comment="Modified app.py">
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +100,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1762898106254</updated>
-      <workItem from="1762898107363" duration="1692000" />
+      <workItem from="1762898107363" duration="2058000" />
     </task>
     <task id="LOCAL-00001" summary="Added all the files for the project.">
       <option name="closed" value="true" />
@@ -142,7 +142,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762899560007</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Modified app.py">
+      <option name="closed" value="true" />
+      <created>1762899959816</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1762899959816</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +162,7 @@
     <MESSAGE value="Added all the html files." />
     <MESSAGE value="Added the home page code." />
     <MESSAGE value="Create Placeholder Templates for Charts." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create Placeholder Templates for Charts." />
+    <MESSAGE value="Modified app.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified app.py" />
   </component>
 </project>
