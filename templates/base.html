@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}IoT Dashboard{% endblock %}</title>
+
+  <!-- App styles -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+  <!-- Chart.js (available to all pages that extend this base) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <nav class="nav-wrap">
+      <a class="brand" href="{{ url_for('home') }}">Lab 10 — Chart.js + Flask</a>
+      <div class="links">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('line_chart') }}">Line Chart</a>
+        <a href="{{ url_for('bar_chart') }}">Bar Chart</a>
+        <a href="{{ url_for('pie_chart') }}">Pie Chart</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+
+  {% block scripts %}{% endblock %}
+</body>
+</html>
