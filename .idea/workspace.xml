@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6de8c5b6-fc73-49ba-9c62-d66688bc3b15" name="Changes" comment="Added the home page code.">
+    <list default="true" id="6de8c5b6-fc73-49ba-9c62-d66688bc3b15" name="Changes" comment="Create Placeholder Templates for Charts.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/line_chart.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/line_chart.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,7 +100,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1762898106254</updated>
-      <workItem from="1762898107363" duration="1343000" />
+      <workItem from="1762898107363" duration="1692000" />
     </task>
     <task id="LOCAL-00001" summary="Added all the files for the project.">
       <option name="closed" value="true" />
@@ -135,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762899442648</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Create Placeholder Templates for Charts.">
+      <option name="closed" value="true" />
+      <created>1762899560007</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1762899560007</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,6 +153,7 @@
     <MESSAGE value="added app" />
     <MESSAGE value="Added all the html files." />
     <MESSAGE value="Added the home page code." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the home page code." />
+    <MESSAGE value="Create Placeholder Templates for Charts." />
+    <option name="LAST_COMMIT_MESSAGE" value="Create Placeholder Templates for Charts." />
   </component>
 </project>
