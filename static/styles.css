@@ -118,6 +118,12 @@ body {
     margin-top: 2rem;
 }
 
+.chart-container canvas {
+  max-width: 400px;
+  max-height: 400px;
+  margin: 0 auto;
+}
+
 h2 {
     color: #2c3e50;
 }

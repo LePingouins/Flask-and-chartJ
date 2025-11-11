@@ -20,28 +20,28 @@ def pie_chart():
 
 @app.route('/api/pie-data')
 def pie_data():
-    # Static data representing IoT device statuses
     data = {
-        'labels': ['Active', 'Inactive', 'Maintenance', 'Offline'],
+        'labels': ['Online', 'Sleeping', 'Charging', 'Error'],
         'datasets': [{
-            'label': 'Device Status',
-            'data': [12, 3, 2, 1],  # Example counts for each label
+            'label': 'Smart Devices',
+            'data': [20, 5, 8, 2],  # change counts here
             'backgroundColor': [
-                'rgba(75, 192, 192, 0.7)',
-                'rgba(255, 99, 132, 0.7)',
-                'rgba(255, 206, 86, 0.7)',
-                'rgba(153, 102, 255, 0.7)'
+                'rgba(54, 162, 235, 0.7)',   # Blue
+                'rgba(255, 206, 86, 0.7)',   # Yellow
+                'rgba(75, 192, 192, 0.7)',   # Teal
+                'rgba(255, 99, 132, 0.7)'    # Pink
             ],
             'borderColor': [
-                'rgba(75, 192, 192, 1)',
-                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
                 'rgba(255, 206, 86, 1)',
-                'rgba(153, 102, 255, 1)'
+                'rgba(75, 192, 192, 1)',
+                'rgba(255, 99, 132, 1)'
             ],
             'borderWidth': 1
         }]
     }
     return jsonify(data)
+
 
 # 👇 This part actually starts the Flask development server
 if __name__ == '__main__':

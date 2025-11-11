@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6de8c5b6-fc73-49ba-9c62-d66688bc3b15" name="Changes" comment="Modified app.py">
+    <list default="true" id="6de8c5b6-fc73-49ba-9c62-d66688bc3b15" name="Changes" comment="Connected the JSON data to the pie_chart.html">
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +101,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1762898106254</updated>
-      <workItem from="1762898107363" duration="2058000" />
+      <workItem from="1762898107363" duration="2407000" />
     </task>
     <task id="LOCAL-00001" summary="Added all the files for the project.">
       <option name="closed" value="true" />
@@ -150,7 +151,23 @@
       <option name="project" value="LOCAL" />
       <updated>1762899959816</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added the data JSON format to that endpoint: /api/pie-data">
+      <option name="closed" value="true" />
+      <created>1762900208637</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1762900208637</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Connected the JSON data to the pie_chart.html">
+      <option name="closed" value="true" />
+      <created>1762900351663</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1762900351663</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,6 +180,8 @@
     <MESSAGE value="Added the home page code." />
     <MESSAGE value="Create Placeholder Templates for Charts." />
     <MESSAGE value="Modified app.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified app.py" />
+    <MESSAGE value="Added the data JSON format to that endpoint: /api/pie-data" />
+    <MESSAGE value="Connected the JSON data to the pie_chart.html" />
+    <option name="LAST_COMMIT_MESSAGE" value="Connected the JSON data to the pie_chart.html" />
   </component>
 </project>
