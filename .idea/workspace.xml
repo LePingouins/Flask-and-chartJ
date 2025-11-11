@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6de8c5b6-fc73-49ba-9c62-d66688bc3b15" name="Changes" comment="Added all the html files." />
+    <list default="true" id="6de8c5b6-fc73-49ba-9c62-d66688bc3b15" name="Changes" comment="Added the home page code.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/line_chart.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/line_chart.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -98,7 +101,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1762898106254</updated>
-      <workItem from="1762898107363" duration="1245000" />
+      <workItem from="1762898107363" duration="1343000" />
     </task>
     <task id="LOCAL-00001" summary="Added all the files for the project.">
       <option name="closed" value="true" />
@@ -124,7 +127,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762899254149</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added the home page code.">
+      <option name="closed" value="true" />
+      <created>1762899442648</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1762899442648</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,6 +145,7 @@
     <MESSAGE value="Added all the files for the project." />
     <MESSAGE value="added app" />
     <MESSAGE value="Added all the html files." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added all the html files." />
+    <MESSAGE value="Added the home page code." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the home page code." />
   </component>
 </project>

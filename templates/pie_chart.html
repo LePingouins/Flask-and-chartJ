@@ -1,7 +1,30 @@
 {% extends "base.html" %}
+
 {% block title %}Pie Chart – IoT Dashboard{% endblock %}
+
 {% block content %}
   <h2>Pie Chart</h2>
-  <p>Data will load here later.</p>
-  <div class="chart-container"><canvas id="pieChart"></canvas></div>
+  <p>This chart shows the proportion of device types or statuses.</p>
+
+  <div class="chart-container">
+    <canvas id="pieChart"></canvas>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    const ctxPie = document.getElementById('pieChart').getContext('2d');
+    new Chart(ctxPie, {
+      type: 'pie',
+      data: {
+        labels: ['Active', 'Idle', 'Offline'],
+        datasets: [{
+          label: 'Device Status',
+          data: [60, 25, 15],
+          backgroundColor: ['#4ade80', '#fbbf24', '#f87171']
+        }]
+      },
+      options: { responsive: true }
+    });
+  </script>
 {% endblock %}

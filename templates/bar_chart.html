@@ -1,7 +1,30 @@
 {% extends "base.html" %}
+
 {% block title %}Bar Chart – IoT Dashboard{% endblock %}
+
 {% block content %}
   <h2>Bar Chart</h2>
-  <p>Data will load here later.</p>
-  <div class="chart-container"><canvas id="barChart"></canvas></div>
+  <p>This chart compares different IoT sensor values.</p>
+
+  <div class="chart-container">
+    <canvas id="barChart"></canvas>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    const ctxBar = document.getElementById('barChart').getContext('2d');
+    new Chart(ctxBar, {
+      type: 'bar',
+      data: {
+        labels: ['Sensor A', 'Sensor B', 'Sensor C', 'Sensor D'],
+        datasets: [{
+          label: 'Voltage (V)',
+          data: [3.3, 2.8, 3.6, 3.0],
+          backgroundColor: ['#60a5fa','#34d399','#fbbf24','#f87171']
+        }]
+      },
+      options: { responsive: true }
+    });
+  </script>
 {% endblock %}

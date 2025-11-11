@@ -1,7 +1,34 @@
 {% extends "base.html" %}
+
 {% block title %}Line Chart – IoT Dashboard{% endblock %}
+
 {% block content %}
   <h2>Line Chart</h2>
-  <p>Data will load here later.</p>
-  <div class="chart-container"><canvas id="lineChart"></canvas></div>
+  <p>This chart will display temperature readings over time.</p>
+
+  <div class="chart-container">
+    <canvas id="lineChart"></canvas>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    // Placeholder script (we'll add real data later)
+    const ctxLine = document.getElementById('lineChart').getContext('2d');
+    new Chart(ctxLine, {
+      type: 'line',
+      data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        datasets: [{
+          label: 'Temperature (°C)',
+          data: [22, 21, 23, 25, 24, 26, 28],
+          borderColor: '#38bdf8',
+          backgroundColor: 'rgba(56,189,248,0.2)',
+          tension: 0.3,
+          fill: true
+        }]
+      },
+      options: { responsive: true }
+    });
+  </script>
 {% endblock %}
