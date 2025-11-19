@@ -1,4 +1,4 @@
-It demonstrates how to build a small Flask web app that displays charts using Chart.js, including both static JSON data and dynamic data from SQLite.
+This project demonstrates how to build a small Flask web app that displays charts using Chart.js, including both static JSON data and dynamic data from SQLite.
 
 🚀 Features
 
